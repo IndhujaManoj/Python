@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML to Base64 to Image</title>
+</head>
+<body>
+    <h1>Hello, World!</h1>
+    <p>This is a basic HTML file.</p>
+
+    <script>
+        // HTML content
+        const htmlContent = `
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Basic HTML</title>
+        </head>
+        <body>
+            <h1>Hello, World!</h1>
+            <p>This is a basic HTML file.</p>
+        </body>
+        </html>
+        `;
+
+        // Convert HTML to Base64
+        const base64Data = btoa(htmlContent);
+
+        // Create a Data URI for an image
+        const dataURI = `data:image/png;base64,${base64Data}`;
+
+        // Create an image element
+        const img = document.createElement('img');
+        img.src = dataURI;
+
+        // Append the image to the body
+        document.body.appendChild(img);
+    </script>
+</body>
+</html>
